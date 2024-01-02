@@ -36,7 +36,7 @@ GPIO.setup(GPIO_02, GPIO.OUT)  #  Set BCM GPIO #6 as an OUTPUT
 GPIO.setup(GPIO_03, GPIO.OUT)  #  Set BCM GPIO #12 as an OUTPUT
 GPIO.setup(GPIO_04, GPIO.OUT)  #  Set BCM GPIO #13 as an OUTPUT
 
-#  Initialize all2  GPIO outputs to LOW (safe mode)...
+#  Initialize all 4 GPIO outputs to LOW (safe mode)...
 GPIO.output(GPIO_01, GPIO.LOW)	
 GPIO.output(GPIO_02, GPIO.LOW)
 GPIO.output(GPIO_03, GPIO.LOW)
