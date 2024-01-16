@@ -15,3 +15,14 @@
                     BCM: 12 on hardware pin # 32
                     BCM: 13 on hardware pin # 33
 
+  The above outputs are then hard wired routed to GPIO Inputs as follows:                  
+
+  BCM: 5 on hardware pin # 29  ==> to ==> BCM: 16 on hardware pin # 36
+  BCM: 6 on hardware pin # 31  ==> to ==> BCM: 17 on hardware pin # 11
+  BCM: 12 on hardware pin # 32 ==> to ==> BCM: 22 on hardware pin # 15
+  BCM: 13 on hardware pin # 33 ==> to ==> BCM: 23 on hardware pin # 16
+
+  View the attached video to see the "INPUT" pins being cycled by the output of the 
+  GPIO_Driver_01.py script.
+
+
