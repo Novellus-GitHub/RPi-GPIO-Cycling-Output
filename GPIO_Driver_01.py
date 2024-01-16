@@ -1,7 +1,9 @@
 #  
 #  Author:  Alain Coulombe - January 2024
 #
-#  First try at making GPIOs change - for the Node.JS interface I'm building.
+#  GPIO_Driver_01.py
+#
+#  First try at making GPIOs toggle - for the Node.JS interface I'm building.
 #
 #  I built this to cycle through 4 Raspbery Pi GPIO outputs so that they 
 #  could be looped back to the Digital Input GPIO pins of a Seed reTerminal DM
