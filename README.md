@@ -20,7 +20,7 @@
                     
                     BCM: 13 on hardware pin # 33
 
-  The above outputs are then hard wired routed to GPIO Inputs as follows:                  
+  The above outputs are then hard wired routed to GPIO Inputs as follows (input pins are being monitored / reported by node.js):                  
 
                     BCM: 5 on hardware pin # 29  ==> to ==> BCM: 16 on hardware pin # 36
   
