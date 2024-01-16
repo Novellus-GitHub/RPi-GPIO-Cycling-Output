@@ -11,8 +11,11 @@
   working on.
 
   GPIO Output pins: BCM: 5 on hardware pin # 29
+  
                     BCM: 6 on hardware pin # 31
+                    
                     BCM: 12 on hardware pin # 32
+                    
                     BCM: 13 on hardware pin # 33
 
   The above outputs are then hard wired routed to GPIO Inputs as follows:                  
