@@ -1,24 +1,23 @@
 #  
 #  Author:  Alain Coulombe - January 2024
 #
-#  GPIO_Driver_01.py
-#
-#  First try at making GPIOs toggle - for the Node.JS interface I'm building.
+#  First try at making GPIOs change - for the Node.JS interface I'm building.
 #
 #  I built this to cycle through 4 Raspbery Pi GPIO outputs so that they 
 #  could be looped back to the Digital Input GPIO pins of a Seed reTerminal DM
 #  and be used to generate a test signal for the node.js program I've been
 #  working on.
 #
+#  https://www.youtube.com/watch?v=Ht_LdGroNZE
 #
-#
-#  GPIO Output pins: BCM: 5 on hardware pin # 29
-#                    BCM: 6 on hardware pin # 31
+#  GPIO Output pins: BCM:  5 on hardware pin # 29
+#                    BCM: 19 on hardware pin # 35
 #                    BCM: 12 on hardware pin # 32
 #                    BCM: 13 on hardware pin # 33
 #
 
 import time
+import sys
 from itertools import cycle  #  Use the itertools function "cycle" 
 #   https://www.geeksforgeeks.org/python-itertools/
 import RPi.GPIO as GPIO
@@ -27,7 +26,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
 GPIO_01 = 5   #  29  ==>  Broadcom GPIO # 5 on header pin # 29
-GPIO_02 = 6   #  31  ==>  Broadcom GPIO # 6 on header pin # 31
+GPIO_02 = 19  #  35  ==>  Broadcom GPIO # 19 on header pin # 35
 GPIO_03 = 12  #  32  ==>  Broadcom GPIO # 12 on header pin # 32
 GPIO_04 = 13  #  33  ==>  Broadcom GPIO # 13 on header pin # 33
 
@@ -55,13 +54,28 @@ output =  [
 output_cycle = cycle(output)  #  cycle comes from the itertools function.
 
 while True:
-	bit, duration = next(output_cycle)  #  From "output" and "output cycle" above. 
-	# print (bit)
-	GPIO.output(bit, GPIO.HIGH)
-	print ('GPIO', (bit), 'is now On')  #  Send message to the console.
-	time.sleep(duration)
+	try:
+	 bit, duration = next(output_cycle)  #  From "output" and "output cycle" above. 
+	 # print (bit)
+	 GPIO.output(bit, GPIO.HIGH)
+	 print ('GPIO', (bit), 'is now On')  #  Send message to the console.
+	 time.sleep(duration)
 
-	# print (bit)
-	GPIO.output(bit, GPIO.LOW)
-	print ('GPIO', (bit), 'is now Off')  #  Send message to the console.
+	 # print (bit)
+	 GPIO.output(bit, GPIO.LOW)
+	 print ('GPIO', (bit), 'is now Off')  #  Send message to the console.
 	
+	except KeyboardInterrupt:  # Attempt a graceful exit. Set ALL GPIOs LOW
+	 print ("")
+	 print ("CTRL-C detected - Shutting down.")
+	 GPIO.output(5, GPIO.LOW)
+	 print ("GPIO 5 Set to LOW")
+	 GPIO.output(19, GPIO.LOW)
+	 print ("GPIO 19 Set to LOW")
+	 GPIO.output(12, GPIO.LOW)
+	 print ("GPIO 12 Set to LOW")
+	 GPIO.output(13, GPIO.LOW)
+	 print ("GPIO 13 Set to LOW")
+	 sys.exit()
+
+sys.exit()
