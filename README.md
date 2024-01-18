@@ -14,7 +14,7 @@
   
                     BCM: 5 on hardware pin # 29
   
-                    BCM: 6 on hardware pin # 31
+                    BCM: 19 on hardware pin # 35
                     
                     BCM: 12 on hardware pin # 32
                     
@@ -24,7 +24,7 @@
 
                     BCM: 5 on hardware pin # 29  ==> to ==> BCM: 16 on hardware pin # 36
   
-                    BCM: 6 on hardware pin # 31  ==> to ==> BCM: 17 on hardware pin # 11
+                    BCM: 19 on hardware pin # 35  ==> to ==> BCM: 17 on hardware pin # 11
   
                     BCM: 12 on hardware pin # 32 ==> to ==> BCM: 22 on hardware pin # 15
   
