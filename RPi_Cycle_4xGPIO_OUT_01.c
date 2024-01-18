@@ -25,7 +25,7 @@
 #include <stdio.h>
 #include <stdbool.h>  //  Not used.
 
-# define GPIO5 RPI_BPLUS_GPIO_J8_29 // GPIO 5 - Defines variable GPIO5 (physical header pin #29) for bcm2835.h
+# define GPIO5 RPI_BPLUS_GPIO_J8_29  // GPIO  5 - Defines variable GPIO5 (physical header pin #29) for bcm2835.h
 # define GPIO19 RPI_BPLUS_GPIO_J8_35 // GPIO 19 - Defines variable GPIO19 (physical header pin #35) for bcm2835.h
 # define GPIO12 RPI_BPLUS_GPIO_J8_32 // GPIO 12 - Defines variable GPIO12 (physical header pin #32) for bcm2835.h
 # define GPIO13 RPI_BPLUS_GPIO_J8_33 // GPIO 13 - Defines variable GPIO13 (physical header pin #33) for bcm2835.h
